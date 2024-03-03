@@ -14,7 +14,7 @@ export const Description = () => {
 
   return (
     <div>
-      <DogImage url={image_url}/>
+      <DogImage imageUrl={image_url}/>
       <form className='dog_form' >
         <button type='button' onClick={displayDog}>別の犬を表示</button>
       </form>

@@ -4,6 +4,7 @@ import './App.css'
 import {Description} from './Description'
 import './Header'
 import Header from './Header'
+import DogListContainer from './DogListContainer'
 
 
 /**
@@ -14,6 +15,7 @@ export const App = () => {
     <div>
       <Header />
       <Description />
+      <DogListContainer />
     </div>
   )
 }
