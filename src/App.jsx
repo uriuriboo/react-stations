@@ -9,7 +9,7 @@ import { useState } from 'react'
 export const App = () => {
   const [dogUrl, setDogUrl] = useState('https://images.dog.ceo/breeds/spaniel-brittany/n02101388_6057.jpg');
 
-  const displayDog = async (e) => {
+  const displayDog = async () => {
     const response = await fetch('https://dog.ceo/api/breeds/image/random')
     const json_response = await response.json()
     setDogUrl(json_response.message)
@@ -17,9 +17,11 @@ export const App = () => {
   }
   return (
     <div>
-      <header>Dogアプリ</header>
-      <img src={dogUrl} />
-      <form onClick={displayDog}>
+      <header className='header'>Dogアプリ</header>
+      <div className='img_wrapper'>
+      <img className='dog_img' src={dogUrl} />
+      </div>
+      <form className='dog_form' onClick={displayDog}>
       <button type='button'>別の犬を表示</button>
       </form>
     </div>
