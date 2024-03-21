@@ -4,12 +4,13 @@ import { useState, useEffect } from 'react'
 import BreedsSelect from './BreedsSelect'
 
 export const DogListContainer = () => {
+  const breedsListUrl = 'https://dog.ceo/api/breeds/list/all'
   const [breeds, setBreeds] = useState([]);
-  const breeds_list_url = 'https://dog.ceo/api/breeds/list/all'
-  const [selectedBreed, setSelectedBreed] = useState('dog')
+  const [selectedBreed, setSelectedBreed] = useState('select')
+  const [selectedBreedImgs, setSelectedBreedImgs] = useState([])
 
   useEffect(() => {
-    fetch(breeds_list_url)
+    fetch(breedsListUrl)
       .then(response => response.json())
       .then(dogs => {
         const array = []
@@ -21,12 +22,15 @@ export const DogListContainer = () => {
         console.error('Error fetching data:', error);
       })
   }, [])
+
   return (
     <div>
       <BreedsSelect
         breeds={breeds}
         selectedBreed={selectedBreed}
         setSelectedBreed={setSelectedBreed}
+        selectedBreedImgs={selectedBreedImgs}
+        setSelectedBreedImgs={setSelectedBreedImgs}
         />
     </div>
   )

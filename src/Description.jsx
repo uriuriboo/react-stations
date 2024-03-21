@@ -13,11 +13,14 @@ export const Description = () => {
   }
 
   return (
+    <div className='dog_display'>
+    <p className='site_explanation'>犬の画像を表示するサイトです</p>
     <div>
       <DogImage imageUrl={image_url}/>
       <form className='dog_form' >
-        <button type='button' onClick={displayDog}>別の犬を表示</button>
+        <button className='update_button' type='button' onClick={displayDog}>更新</button>
       </form>
+      </div>
     </div>
   )
 }

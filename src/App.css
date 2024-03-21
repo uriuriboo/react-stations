@@ -3,14 +3,47 @@
     text-align: center;
 }
 
-.dog_form {
-    text-align: center;
+.dog_display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.site_explanation {
+    padding: 10% 0px 0px 20%
+}
+
+.update_button {
+    margin-left: 70%;
+    background-color: aquamarine;
+    color: white;
+}
+
+.img_wrapper {
+    width: 300px;
+    height: 300px;
+}
+
+.dog_img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.dog_breeds_selector_wrapper {
+    display: flex;
+    justify-content: center;
 }
 
 .dog_breeds_selecter {
     text-align: center;
 }
 
-.img_wrapper {
-    text-align: center;
+.breeds_select {
+    margin: 20px 0px 0px 10px;
+    height: 20px;
+}
+
+.display_button {
+    margin: 20px 0px 0px 10px;
+    height: 20px;
 }
