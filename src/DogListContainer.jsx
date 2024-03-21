@@ -16,7 +16,7 @@ export const DogListContainer = () => {
         const array = []
         for (let i in dogs.message)
           array.push(i)
-        setBreeds(array)
+          setBreeds(array)
       })
       .catch(error => {
         console.error('Error fetching data:', error);
