@@ -8,23 +8,20 @@ export const BreedsSelect = (props) => {
           selectedBreedImgs,
           setSelectedBreedImgs} = props
   const select_breed_url = `https://dog.ceo/api/breed/${selectedBreed}/images/random/12`
-  // https://dog.ceo/api/breed/shiba/images/random/4
   const onChange = (e) => {
     setSelectedBreed(e.target.value)
   }
-  // 同期非同期処理
+
   const update_breeds = async () => {
     await fetch(select_breed_url)
       .then(response => response.json())
       .then(selectedBreedImgUrls => setSelectedBreedImgs(selectedBreedImgUrls.message))
   }
 
-  const SelectedBreedImgsUrl = (props) => {
-    const {SelectedDogUrls} = props
-    console.log(SelectedBreedImgsUrl)
+  const SelectedBreedImgsUrl = () => {
     return (
       <div className="SelectedDogsImgContainer">
-        {SelectedDogUrls.map(
+        {selectedBreedImgs.map(
           (url,id) => (
             <img key={id} src={url} />
           )
@@ -47,7 +44,7 @@ export const BreedsSelect = (props) => {
       </select>
       <button className="display_button" onClick={update_breeds}>表示</button>
     </div>
-      {SelectedBreedImgsUrl}
+      <SelectedBreedImgsUrl />
     </div>
   )
 }
